@@ -1,0 +1,161 @@
+body {
+  background-color: #282828;
+  color: white;
+  font-family: Arial;
+}
+
+body>header,section {
+  margin-top: 1.5%;
+  margin-bottom: 0%;
+  margin-left: 12.5%;
+  margin-right: 12.5%; 
+}
+
+#banner {
+
+border-bottom: 4px solid #33CCFF;
+font-family: Monospace;
+width: 34%;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 1.5%;
+text-align: center;
+font-size: 75px;
+color: #FF7400;
+letter-spacing: -11px;
+
+}
+
+#login {
+font-family: Monospace;
+font-size: 15px;
+top: 10px;
+position: absolute;
+left: 85%;
+width: 250px;
+
+}
+.forum {
+  font-size: 107%;
+  padding: 3%;
+  padding-top: .5%;
+}
+p#thread {
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid white;
+  border-radius: 10px;     
+} 
+#post {
+  border: 1px solid white;
+}
+#responses {
+  margin-bottom: 2%;
+  padding: 1%;
+}
+#responses p {
+  margin-left: 7%;
+}
+.top>a {
+  text-decoration: none;
+  color: white;  
+}
+#crucial {
+  color: #FF7400 !important;
+}
+#register{
+font-size: 25px;
+padding: 3px;
+position: absolute;
+top: 10px;
+left: 80px;
+font-family: Monospace;
+color: #33CCFF;
+}
+
+section {
+  border: 2.5px solid #33CCFF !important;
+  border-radius: 10px;
+  padding-right: 15px;
+  background-color: #202020;
+}
+.problem_description {
+  float: center;
+  border: 2.5px solid #33CCFF !important;
+    border-radius: 10px;
+  margin: 0px 20%;
+  margin-top: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.problem_description>p,div,ul {
+  font-family: Garamond; 
+  color: white;
+  text-align: left;
+}
+#answer {
+  text-align: center;
+}
+h2.question {
+  font-family: Monospace;
+  font-size: 20px;
+  font-weight: normal;
+  color: #FF7400;
+  letter-spacing: -2px;
+}
+
+h4 {
+  font-family: Monospace;
+  font-size: 20px;
+  color: #FF7400;
+  font-weight: normal;
+  letter-spacing: -2px;
+}
+table {
+  font-family: monospace;
+  font-size: 125%;
+  border: 4px solid #33CCFA !important;
+  margin-left: 17.5%;
+  margin-right: 12.5%;
+  border-radius: 10px;
+  border-collapse: collapse;
+}
+.oddrow {
+  background-color: #282828;
+}
+.evenrow {
+  background-color: #181818;
+}
+th, td {
+  border: 2px solid #33CCFF;
+  text-align: center; 
+  padding: 10px;
+}
+th {
+  background-color: black;
+}
+a {
+  text-decoration: none;
+  color: white; 
+}
+form[name='register'] {
+  margin-left: 45%;
+  margin-right: 45%;
+}
+
+#contents {
+width: 600px;
+margin: 8px auto 25px auto;
+text-align: center;
+padding: 5px 10px 5px 50px;
+margin-bottom: 3%;
+}	
+li.top {
+  font-family: Monospace;
+  font-size: 25px;
+  color: white;
+  letter-spacing: -2px;
+  display: inline;
+  margin-right: 40px;
+}
