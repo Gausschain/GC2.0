@@ -77,7 +77,7 @@ if (!mysql_query($query,$db_server)) echo "could not update build score";
 
 function rank_chains($db_server)
 {
-	$query="SELECT * FROM chains ORDER BY score DESC";
+	$query="SELECT * FROM chains WHERE is_Live!='0' ORDER BY score DESC";
 	$result=mysql_query($query,$db_server);
 	$rows=mysql_num_rows($result);
 	
