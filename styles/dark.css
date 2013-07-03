@@ -1,3 +1,11 @@
+color1 {
+  color: #FF7400;
+}
+
+color2 {
+  color: #33CCFF;
+}
+
 body {
   background-color: #282828;
   color: white;
@@ -26,7 +34,7 @@ letter-spacing: -11px;
 
 }
 
-#login {
+#hub, #login {
 font-family: Monospace;
 font-size: 15px;
 top: 10px;
@@ -74,6 +82,35 @@ font-family: Monospace;
 color: #33CCFF;
 }
 
+#editZone {
+  margin-top: -25px;
+  margin-left: 20px;
+}
+
+#expos,#statement {
+  float: left;
+  width: 48%;
+}
+
+#preview_expos,#preview_statement {
+  float: right;
+  width: 47.5%;
+  word-wrap: break-word;
+}
+
+textarea {
+  font-family: Monospace;
+  font-size: 16px;
+}
+
+area {  /* a borderless section */
+  padding: 0px;
+  margin-top:-20px;
+  margin-bottom:-20px;
+  margin-left:18.5%;
+  margin-right: 18.5%;
+}
+
 section {
   border: 2.5px solid #33CCFF !important;
   border-radius: 10px;
@@ -97,6 +134,19 @@ section {
 #answer {
   text-align: center;
 }
+
+label { /* to align labels of text forms */
+  display: block;
+  float: left;
+}
+
+h1 {
+  font-weight: normal;
+  color: #FF7400;
+  font-size: 36px;
+  letter-spacing: -2px;
+}
+
 h2.question {
   font-family: Monospace;
   font-size: 20px;
