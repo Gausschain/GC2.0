@@ -129,8 +129,8 @@
 
 <footer>
       <br><br>
-      <p style="float: right">&copy; Copyright 2013 <span style="color: #FF7400;"> Gauss Chain </span></p>
-      <p style="float: left;">Founded by <span style="color: #FF7400;"> Brevin Wankine </span> </p>
+      <p style="float: right">&copy; Copyright 2013 <color1> Gauss Chain <color1></p>
+      <p style="float: left;">Founded by <color1> Brevin Wankine </color1> </p>
 </footer>
 </body>
 </html>
