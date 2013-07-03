@@ -1,12 +1,12 @@
 <?php
-//run this when $username has solved the problem identified by $chainID and $number which are assumed to be in $_GET
+//run this when $username has solved the problem identified by $_GET['chainID'] and $_GET['number']
 //NOTE: this file does not take into account any changes in star count that may have occurred.  
 
 require_once 'login.php';
 $db_server=mysql_connect($db_hostname,$db_username, $db_password);
 
 if (!$db_server)
-  die("Unable to connect to server.");
+	die("Unable to connect to server.");
 	
 mysql_select_db($db_database);
 
@@ -52,8 +52,8 @@ if (!mysql_query($query,$db_server)) echo "could not update solve score";
 //NOW WE SWITCH TO THE BUILD ASPECT
 
 //update chain score
-$old_popularity = $stars * (1 + $stars / ($solves-1) )^3; //this is the popularity of the problem that was just solved
-$new_popularity = $stars * (1 + $stars / $solves )^3;
+$old_popularity = $stars * pow(1 + $stars / ($solves-1), 3); //this is the popularity of the problem that was just solved
+$new_popularity = $stars * pow(1 + $stars / $solves , 3);
 $old_score=$chain[5];
 $score = $old_score - $old_popularity + $new_popularity;
 
@@ -77,7 +77,7 @@ if (!mysql_query($query,$db_server)) echo "could not update build score";
 
 function rank_chains($db_server)
 {
-	$query="SELECT * FROM chains WHERE is_Live!='0' ORDER BY score DESC";
+	$query="SELECT * FROM chains WHERE is_live!='0' ORDER BY score DESC";
 	$result=mysql_query($query,$db_server);
 	$rows=mysql_num_rows($result);
 	
