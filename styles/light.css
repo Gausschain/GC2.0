@@ -1,3 +1,10 @@
+color1 {
+  color: #A00000;
+}
+
+color2 {
+	color: #A00000;
+}
 body {
   color: black;
   font-family: Arial;
@@ -25,7 +32,7 @@ letter-spacing: -11px;
 
 }
 
-#login {
+#hub,#login {
 font-family: Monospace;
 font-size: 15px;
 top: 10px;
@@ -74,12 +81,51 @@ font-family: Monospace;
 color: black;
 }
 
+#editZone {
+	margin-top: -25px;
+	margin-left: 20px;
+}
+
+#expos,#statement {
+	float: left;
+	width: 48%;
+}
+
+#preview_expos,#preview_statement {
+	float: right;
+	width: 47.5%;
+	word-wrap: break-word;
+}
+
+textarea {
+	font-family: Monospace;
+	font-size: 16px;
+}
+
+.area { /* a borderless section */
+	padding: 0px;
+	font-family: Arial;
+	margin-top:-20px;
+	margin-bottom:-20px;
+	margin-left:18.5%;
+	margin-right: 18.5%;
+}
+
 section {
   border: 2.5px solid #A00000 !important;
   border-radius: 10px;
   padding-right: 15px;
   background-color: #F0F0F0;
 }
+
+div.box {
+	border: 2.5px solid #A00000;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 8px;
+	width: 40%;
+}
+
 .problem_description {
   float: center;
   border: 2.5px solid #A00000 !important;
@@ -97,6 +143,20 @@ section {
 #answer {
   text-align: center;
 }
+
+label {
+	display: block;
+	float: left;
+}
+
+h1 {
+	font-weight: normal;
+	font-family: Arial;
+	color: #A00000;
+	font-size: 36px;
+	letter-spacing: -2px;
+}
+
 h2.question {
   font-family: Monospace;
   font-size: 20px;
