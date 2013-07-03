@@ -1,7 +1,4 @@
 <?php 
-	/* $dsn='mysql:host=localhost;dbname=gausschains';
-	$username='kevinranks';
-	$password='godofwar74'; */
 	
 	require 'database.php';
 	// require 'email.php';
