@@ -103,8 +103,9 @@ textarea {
   font-size: 16px;
 }
 
-area {  /* a borderless section */
+.area {  /* a borderless section */
   padding: 0px;
+  font-family: Arial;
   margin-top:-20px;
   margin-bottom:-20px;
   margin-left:18.5%;
@@ -117,6 +118,15 @@ section {
   padding-right: 15px;
   background-color: #202020;
 }
+
+div.box {
+  border: 2.5px solid #33CCFF;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 8px;
+	width: 40%;
+
+}
 .problem_description {
   float: center;
   border: 2.5px solid #33CCFF !important;
@@ -126,7 +136,7 @@ section {
   padding-left: 2%;
   padding-right: 2%;
 }
-.problem_description>p,div,ul {
+.problem_description>p,ul {
   font-family: Garamond; 
   color: white;
   text-align: left;
