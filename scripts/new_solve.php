@@ -1,6 +1,7 @@
 <?php
-//run this when $username has solved the problem identified by $_GET['chainID'] and $_GET['number']
+//run this when $_GET['username'] has solved the problem identified by $_GET['chainID'] and $_GET['number']
 //NOTE: this file does not take into account any changes in star count that may have occurred.  
+//I said fuck you to my original solve_score shit.  Right now solve_score is just the number of problems solved.
 
 require_once 'login.php';
 $db_server=mysql_connect($db_hostname,$db_username, $db_password);
@@ -45,14 +46,17 @@ if (!mysql_query($query,$db_server)) echo "failed to update value";
 
 //update solver's solve score
 $solve_score=$account[3];
-$solve_score+=$new_value;
+$solve_score++;  //we give them points commensurate with the difficulty of problem BEFORE they solved it
 $query="UPDATE accounts SET solve_score='$solve_score' WHERE username='$username'";
 if (!mysql_query($query,$db_server)) echo "could not update solve score";
 
 //NOW WE SWITCH TO THE BUILD ASPECT
 
 //update chain score
-$old_popularity = $stars * pow(1 + $stars / ($solves-1), 3); //this is the popularity of the problem that was just solved
+if ($solves==1)
+	$old_popularity=0;
+else
+	$old_popularity = $stars * pow(1 + $stars / ($solves-1), 3); //this is the popularity of the problem that was just solved
 $new_popularity = $stars * pow(1 + $stars / $solves , 3);
 $old_score=$chain[5];
 $score = $old_score - $old_popularity + $new_popularity;
