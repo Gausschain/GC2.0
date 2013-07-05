@@ -12,8 +12,7 @@ $account=pg_fetch_row($result);
 if ($account[1]== $password)
 	setcookie ( 'username', "$username", time()+3600*24, '/' );
 
-header ("Location: ../index.php");
-die();
+echo $_COOKIE['username'];
 
 ?>
 

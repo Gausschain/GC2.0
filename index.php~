@@ -154,9 +154,6 @@ $username=$_COOKIE['username'];
     else if ($page=='newProblem') {
 	include('html/newProblem.php');
     }
-    else if ($page=='editProblem') {
-	include ('html/editProblem.php');
-    }
     else {
       include('html/home.php'); 
     }
