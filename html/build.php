@@ -1,16 +1,14 @@
 <?php
-
-$query="SELECT * FROM chains WHERE author='$username'";
-$result=mysql_query($query,$db_server);
-$rows=mysql_num_rows($result);
-
+if ( (! $_COOKIE['username']) or $_COOKIE['username']=="")
+	die ("You must be logged on to build a chain.");
+$username=$_COOKIE['username'];
 
 ?>
 <div class="area">
 
 <h1>MY CHAINS</h1>
 
-	<a href="index.php?page=newChain"> <span style="font-size: 20px"> BUILD NEW CHAIN </span></a>
+	<a href="index.php?page=newChain"> <span style="font-size: 20px"> <color2>BUILD NEW CHAIN</color2> </span></a>
 	<br/><br/>
 
 <?php 

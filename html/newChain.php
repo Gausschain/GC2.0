@@ -1,9 +1,10 @@
 <?php
 
-
+require 'scripts/treatment.php';
 	
-if (! isset($_COOKIE['username'])) echo "You must be logged in to build a chain.";
-else { $username=$_COOKIE['username'];  }
+if ( (! $_COOKIE['username']) or $_COOKIE['username']=="")
+	die ("You must be logged on to build a chain.");
+$username=$_COOKIE['username'];
 
 
 if (isset($_POST['title']) && isset($_POST['submitChain']) && ! ( $_POST['title']=="" ) )
@@ -13,16 +14,19 @@ if (isset($_POST['title']) && isset($_POST['submitChain']) && ! ( $_POST['title'
 	$rows=pg_num_rows($result);
 	$rows++;	
 
-	$title=pg_escape_string($_POST['title']);
-	$description=pg_escape_string($_POST['description']);
-	$prereqs=pg_escape_string($_POST['prereqs']);
+	$title=sanitize($_POST['title']);
+	$description=sanitize($_POST['description']);
+	$prereqs=sanitize($_POST['prereqs']);
 	
 	$query = "INSERT INTO chains (chainid, title,description,prereqs,author) VALUES ('$rows','$title','$description','$prereqs','$username')"; 
 
 	if (!pg_query($dbconn,$query))
 		echo "didn't work";	
 	else
-		echo "You have successfully created a chain.  Return to the BUILD section to continue.";
+	{
+		header("Location: index.php?page=build");
+		die();
+	}
 }
 
 

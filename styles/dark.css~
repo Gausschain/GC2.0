@@ -1,16 +1,18 @@
 color1 {
-	color: #A00000;
+  color: #FF7400;
 }
 
 color2 {
-	color: #707070;
+  color: white;
 }
 
 color3 {
-	#F0F0F0;
+  color: #202020;
 }
+
 body {
-  color: black;
+  background-color: #323232;
+  color: white;
   font-family: Arial;
 }
 
@@ -23,7 +25,7 @@ body>header,section {
 
 #banner {
 
-border-bottom: 4px solid #A00000;
+border-bottom: 4px solid #A0A0A0;
 font-family: Monospace;
 width: 34%;
 margin-left: auto;
@@ -31,18 +33,17 @@ margin-right: auto;
 margin-bottom: 1.5%;
 text-align: center;
 font-size: 75px;
-color: #A00000;
+color: #FF7400;
 letter-spacing: -11px;
 
 }
 
-#hub,#login {
+#hub, #login {
 font-family: Monospace;
 font-size: 15px;
 top: 10px;
+right: 50px;
 position: absolute;
-left: 85%;
-width: 250px;
 
 }
 .forum {
@@ -54,9 +55,9 @@ p#thread {
   padding: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border: 1px solid black;
-  border-radius: 10px;  
-}
+  border: 1px solid white;
+  border-radius: 10px;     
+} 
 #post {
   border: 1px solid white;
 }
@@ -69,12 +70,11 @@ p#thread {
 }
 .top>a {
   text-decoration: none;
-  color: black;  
+  color: white;  
 }
 #crucial {
-  color: #B00000 !important;
+  color: #FF7400 !important;
 }
-
 #register{
 font-size: 25px;
 padding: 3px;
@@ -82,105 +82,110 @@ position: absolute;
 top: 10px;
 left: 80px;
 font-family: Monospace;
-color: black;
+color: #33CCFF;
 }
 
 #editZone {
-	margin-top: -25px;
-	margin-left: 20px;
+  margin-top: -25px;
+  margin-left: 20px;
 }
 
 #expos,#statement {
-	float: left;
-	width: 48%;
+  float: left;
+  width: 48%;
 }
 
 #preview_expos,#preview_statement {
-	float: right;
-	width: 47.5%;
-	word-wrap: break-word;
+  float: right;
+  width: 47.5%;
+  word-wrap: break-word;
+  color: #A0A0A0;
 }
 
 textarea {
-	font-family: Monospace;
-	font-size: 16px;
+  font-family: Monospace;
+  font-size: 16px;
 }
 
-.area { /* a borderless section */
-	padding: 0px;
-	font-family: Arial;
-	margin-top:-20px;
-	margin-bottom:-20px;
-	margin-left:18.5%;
-	margin-right: 18.5%;
+.area {  /* a borderless section */
+  padding: 0px;
+  font-family: Arial;
+  color: white;
+  margin-top:-20px;
+  margin-bottom:-20px;
+  margin-left:18.5%;
+  margin-right: 18.5%;
 }
 
 section {
-  border: 2.5px solid #A00000 !important;
+  border: 2.5px solid #202020 !important;
   border-radius: 10px;
   padding-right: 15px;
-  background-color: #F0F0F0;
+  background-color: #202020;
+  
 }
 
 div.box {
-	border: 2.5px solid #A00000;
-	background-color: #F0F0F0;
+	border: 2.5px solid #202020;
 	border-radius: 5px;
 	padding: 10px;
 	margin-bottom: 8px;
 	width: 40%;
-}
+	background-color:#202020;
 
+}
 .problem_description {
   float: center;
-  border: 2.5px solid #A00000 !important;
+  border: 2.5px solid #33CCFF !important;
     border-radius: 10px;
   margin: 0px 20%;
   margin-top: 2%;
   padding-left: 2%;
   padding-right: 2%;
 }
-.problem_description>p,div,ul {
+.problem_description>p,ul {
   font-family: Garamond; 
-  color: black;
+  color: white;
   text-align: left;
 }
 #answer {
   text-align: center;
 }
 
-label {
-	display: block;
-	float: left;
+label { /* to align labels of text forms */
+  display: block;
+  float: left;
+ 
 }
 
 h1 {
-	font-weight: normal;
-	font-family: Arial;
-	color: #A00000;
-	font-size: 36px;
-	letter-spacing: -2px;
+  font-weight: normal;
+  color: #FF7400;
+  font-size: 36px;
+  letter-spacing: -2px;
 }
 
 h2.question {
   font-family: Monospace;
   font-size: 20px;
   font-weight: normal;
-  color: #A00000;
+  color: #FF7400;
   letter-spacing: -2px;
 }
 
 h4 {
   font-family: Monospace;
   font-size: 20px;
-  color: #A00000;
+  color: #FF7400;
   font-weight: normal;
   letter-spacing: -2px;
 }
 table {
   font-family: monospace;
   font-size: 125%;
-  border: 4px solid #A00000; !important;
+  border: 4px solid #33CCFF !important;
+  margin-left: 17.5%;
+  margin-right: 12.5%;
   border-radius: 10px;
   border-collapse: collapse;
 }
@@ -195,35 +200,38 @@ table {
 td.dish{
 	border: 0;
 	padding:0;
+	background-color: #323232 !IMPORTANT;
 }
 
 td#username {
+	font-weight: bold;
 	letter-spacing: -2px;
 	
 }
 
 td#rank {
-	font-family: Impact;
+	font-family: Monospace;
+	font-weight: 500;
 	font-size: 45px;
+	color: #A0A0A0;
 }
-
 .oddrow {
-  background-color: white ;
+  background-color: #282828;
 }
 .evenrow {
-  background-color: #F0F0F0;
+  background-color: #181818;
 }
 th, td {
-  border: 2px solid #A00000;
+  border: 2px solid #33CCFF;
   text-align: center; 
   padding: 10px;
 }
 th {
-  background-color: white;
+  background-color: black;
 }
 a {
   text-decoration: none;
-  color: black; 
+  color: white; 
 }
 form[name='register'] {
   margin-left: 45%;
@@ -240,7 +248,7 @@ margin-bottom: 3%;
 li.top {
   font-family: Monospace;
   font-size: 25px;
-  color: black;
+  color: white;
   letter-spacing: -2px;
   display: inline;
   margin-right: 40px;

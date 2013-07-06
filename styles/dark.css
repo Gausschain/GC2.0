@@ -200,6 +200,7 @@ table {
 td.dish{
 	border: 0;
 	padding:0;
+	background-color: #323232 !IMPORTANT;
 }
 
 td#username {

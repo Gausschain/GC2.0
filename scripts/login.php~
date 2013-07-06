@@ -1,6 +1,7 @@
 <?php
 
 require 'database.php';
+require 'treatment.php';
 
 $username=$_POST['username'];
 $password=$_POST['password'];
@@ -12,7 +13,8 @@ $account=pg_fetch_row($result);
 if ($account[1]== $password)
 	setcookie ( 'username', "$username", time()+3600*24, '/' );
 
-echo $_COOKIE['username'];
+header ("Location: ../index.php");
+die();
 
 ?>
 

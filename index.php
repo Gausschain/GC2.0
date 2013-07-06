@@ -4,7 +4,7 @@
     <link rel='stylesheet' type ='text/css' href='styles/dark.css' title='light'>
   <?php } 
   else {?>
-    <link rel='stylesheet' type ='text/css' href='styles/dark.css' title='light'>
+    <link rel='stylesheet' type ='text/css' href='styles/light.css' title='light'>
   <?php } ?> 
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   <script language='javascript' type='text/javascript'>
@@ -165,7 +165,7 @@ $username=$_COOKIE['username'];
 
 <footer>
       <br><br>
-      <p style="float: right">&copy; Copyright 2013 <color1> Gauss Chain <color1></p>
+      <p style="float: right">&copy; Copyright 2013 <color1> Gausschain <color1></p>
       <p style="float: left;">Founded by <color1> Brevin Wankine </color1> </p>
 </footer>
 </body>

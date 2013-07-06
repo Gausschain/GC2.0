@@ -3,7 +3,7 @@ color1 {
 }
 
 color2 {
-	color: #A00000;
+	color: #707070;
 }
 
 color3 {
@@ -195,6 +195,7 @@ table {
 td.dish{
 	border: 0;
 	padding:0;
+	background-color: white;
 }
 
 td#username {

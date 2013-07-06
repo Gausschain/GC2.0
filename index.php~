@@ -154,6 +154,9 @@ $username=$_COOKIE['username'];
     else if ($page=='newProblem') {
 	include('html/newProblem.php');
     }
+    else if ($page=='editProblem') {
+	include ('html/editProblem.php');
+    }
     else {
       include('html/home.php'); 
     }
@@ -162,7 +165,7 @@ $username=$_COOKIE['username'];
 
 <footer>
       <br><br>
-      <p style="float: right">&copy; Copyright 2013 <color1> Gauss Chain <color1></p>
+      <p style="float: right">&copy; Copyright 2013 <color1> Gausschain <color1></p>
       <p style="float: left;">Founded by <color1> Brevin Wankine </color1> </p>
 </footer>
 </body>
