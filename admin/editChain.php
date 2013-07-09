@@ -29,6 +29,21 @@ if (isset($_POST['approve']))
 {
 	$query="UPDATE chains SET islive='1' WHERE chainID='$chainID'";
 	pg_query($dbconn,$query);
+
+	$query="SELECT * FROM problems WHERE chainID='$chainID'";
+	$result=pg_query($dbconn,$query);
+	$num_problems=pg_num_rows($result);
+
+	$query="ALTER TABLE accounts ADD" . " chain$chainID " . "CHAR(" . $num_problems . ")";
+	pg_query($dbconn,$query);
+	
+	$string="";
+	for ($k=0; $k<$num_problems; $k++)
+		$string .= "0";
+
+	$query="UPDATE accounts SET chain$chainID=" . "'" . $string . "'" . " WHERE true";
+	pg_query($dbconn,$query);
+
 	header("Location: edit.php");
 	die();
 }

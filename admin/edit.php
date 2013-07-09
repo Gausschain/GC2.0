@@ -20,7 +20,7 @@ for ($j=0; $j<$rows; $j++)
 	$chainID=$chain[0];
 	
 	echo <<<_END
-<a href="editChain.php?chainID=$chainID"> $chain[1] </a> <br>
+<a href="editChain.php?chainID=$chainID"> $chain[1] :: $chain[4]</a> <br>
 _END;
 
 }
