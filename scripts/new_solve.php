@@ -44,6 +44,17 @@ $solve_score++;  //we give them points commensurate with the difficulty of probl
 $query="UPDATE accounts SET solve_score='$solve_score' WHERE username='$username'";
 if (!pg_query($dbconn,$query)) echo "could not update solve score";
 
+//mark that solver solved this problem
+$query="SELECT chain" . $chainID . " FROM accounts WHERE username='" . $username . "'";
+$result=pg_query($dbconn,$query);
+$row=pg_fetch_row($result);
+$string=$row[0];
+
+$new=substr($string,0,$number-1) . "1" . substr($string,$number);
+
+$query="UPDATE accounts SET chain" . $chainID . " =" . "'" . $new . "'" . " WHERE username='" . $username . "'";
+pg_query($dbconn,$query);
+
 //NOW WE SWITCH TO THE BUILD ASPECT
 
 //update chain score
