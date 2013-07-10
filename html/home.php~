@@ -1,50 +1,53 @@
-<?php if (! $username=="") 
-{
-  echo <<<_END
-  <aside id="hub">
-  	
-  	<table id="dish" border="0">
-  		<tr>
-  			<td class="dish" id="rank">37</td>
-  		</tr>
-  		<tr>
-  			<td class="dish" id="username"><color1>BrevinWankine</color1></td>
-  		<tr>
-  			<td class="dish" id="rank">102</td>
-  		</tr>
-		<tr>  	
-  		<td class="dish">
-  			<form method="post" action="home.php">
-  	   		<input type="submit" name="logout" value="Logout"/> </pre></p>
-  			</form>
-  		</td>
-  		</tr>
-  	</table>
-  
-  </aside>
-_END;
-}
-else 
-{
-  echo <<<_END
-  <aside id="login">
-  
-    <form method="post" action="home.php">
-	<p><pre>    Name <input type="text" name="username" /> </pre></p>
-	<p>Password <input type="text" name="password" /> </p>
-	<p><pre>         <input type="submit" name="sub" value="Login"/> </pre></p>
+<div class="builders">
+<h3>TOP BUILDERS</h3> 
+<div class="ranks">
 
-	</form>
-	
-  </aside>
+<?php
 
-  <aside id="register">
-    <p>REGISTER</p>
-  </aside>
-_END;
+$spectrum=array('#FFFFFF','#D8D8D8','#C0C0C0','#B0B0B0','#A0A0A0','#909090','#808080','#707070','#606060','#505050');
+// $spectrum=array('#FF7400','#CC7A00','#B26B00','#995C00','#804C00','#663D00');  attempted orange fadeout
+$query="SELECT * FROM accounts WHERE build_rank>0 ORDER BY build_rank ASC";
+$result=pg_query($dbconn,$query);
+$rows=pg_num_rows($result);
+
+$max=10;
+if ($rows<10)
+	$max=$rows;
+
+
+for ($j=0; $j<$max; $j++)
+{
+	$account=pg_fetch_row($result);
+	$string = "<span style='color: " . $spectrum["$j"] . ";'>" . $account[0] . "</span> <br>";
+	echo $string;
 }
+
+
 ?>
 
+</div>
+</div>
+
+<div class="solvers">
+<h3>TOP SOLVERS</h3>
+<div class="ranks">
+
+<?php
+$query="SELECT * FROM accounts WHERE solve_rank>0 ORDER BY solve_rank ASC";
+$result=pg_query($dbconn,$query);
+
+for ($j=0; $j<$max; $j++)
+{
+	$account=pg_fetch_row($result);
+	$string = "<span style='color: " . $spectrum["$j"] . ";'>" . $account[0] . "</span> <br>";
+	echo $string;
+}
+
+
+?>
+	
+</div>
+</div>
 
 <section> 
           <!--List containing the "FAQ" -->

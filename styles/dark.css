@@ -10,6 +10,27 @@ color3 {
   color: #202020;
 }
 
+.builders {
+width: 18.5%;
+text-align: center;
+margin-top: 8px;
+float: left;
+}
+
+.solvers {
+width: 18.5%;
+text-align: center;
+margin-top: 8px;
+float: right;
+}
+
+.ranks {
+text-align: center;
+font-size: 24px;
+font-family: lucida console;
+
+}
+
 body {
   background-color: #323232;
   color: white;
@@ -19,14 +40,14 @@ body {
 body>header,section {
   margin-top: 1.5%;
   margin-bottom: 0%;
-  margin-left: 12.5%;
-  margin-right: 12.5%; 
+  margin-left: 18.5%;
+  margin-right: 18.5%; 
 }
 
 #banner {
 
 border-bottom: 4px solid #A0A0A0;
-font-family: Monospace;
+font-family: lucida console;
 width: 34%;
 margin-left: auto;
 margin-right: auto;
@@ -42,7 +63,7 @@ letter-spacing: -11px;
 font-family: Monospace;
 font-size: 15px;
 top: 10px;
-right: 50px;
+right: 20px;
 position: absolute;
 
 }
@@ -159,6 +180,7 @@ label { /* to align labels of text forms */
 }
 
 h1 {
+  font-family: Arial;
   font-weight: normal;
   color: #FF7400;
   font-size: 36px;
@@ -173,6 +195,14 @@ h2.question {
   letter-spacing: -2px;
 }
 
+h3{
+  font-family: Arial;
+  font-weight: normal;
+  color: #FF7400;
+  font-size: 36px;
+  letter-spacing: -2px;
+}
+
 h4 {
   font-family: Monospace;
   font-size: 20px;
@@ -184,34 +214,32 @@ table {
   font-family: monospace;
   font-size: 125%;
   border: 4px solid #33CCFF !important;
-  margin-left: 17.5%;
-  margin-right: 12.5%;
   border-radius: 10px;
   border-collapse: collapse;
 }
 
 #dish {
-	font-family: Helvetica;
-	font-size: 200%;
+	font-family: lucida console;
 	cell-spacing:0;
-	border: 0 !important;
+	border: 0 !important;	
+	font-size: 250%;
+	
 }
 
 td.dish{
 	border: 0;
 	padding:0;
 	background-color: #323232 !IMPORTANT;
+	
 }
 
 td#username {
-	font-weight: bold;
 	letter-spacing: -2px;
 	
 }
 
 td#rank {
-	font-family: Monospace;
-	font-weight: 500;
+	font-family: Impact;
 	font-size: 45px;
 	color: #A0A0A0;
 }

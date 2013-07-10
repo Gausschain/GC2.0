@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <head>
-  <?php if($_COOKIE['theme']=='dark') {?>
-    <link rel='stylesheet' type ='text/css' href='styles/dark.css' title='light'>
-  <?php } 
-  else {?>
-    <link rel='stylesheet' type ='text/css' href='styles/dark.css' title='light'>
-  <?php } ?> 
+  <?php if($_COOKIE['theme']=='dark') 
+  {
+      echo "<link rel='stylesheet' type ='text/css' href='styles/dark.css' title='light'>";
+      $spectrum=array('#FFFFFF','#D8D8D8','#C0C0C0','#B0B0B0','#A0A0A0','#909090','#808080','#707070','#606060','#505050');
+  } 
+  else 
+  {
+	$spectrum=array('#A00000', '#A02525', '#A04040', '#A05050', '#A05858', '#A06565', '#A07070', '#A07575', '#A08080', '#A08585');
+        echo "<link rel='stylesheet' type ='text/css' href='styles/dark.css' title='light'>";
+  } 
+  ?> 
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   <script language='javascript' type='text/javascript'>
       window.onload=init;
@@ -47,11 +52,12 @@
         }
       });
     </script>
-</head>
+</head>	
 <body>
  <div id="banner">GAUSSCHAIN</div>
 
 <?php
+require "scripts/database.php";
 
 if (!isset($_COOKIE['username']))
 {
@@ -67,30 +73,33 @@ echo <<<_END
 	
   </aside>
 
-  <aside id="register">
-    <p>REGISTER</p>
-  </aside>
 _END;
 }
 
 else
 {
+	$username=$_COOKIE['username'];
+	$query="SELECT build_rank, solve_rank FROM accounts WHERE username='$username'";
+	$result=pg_query($dbconn,$query);
+	$account=pg_fetch_row($result);
+
+
 echo <<<_END
   <aside id="hub">
   	
   	<table id="dish" border="0">
   		<tr>
-  			<td class="dish" id="rank">37</td>
+  			<td class="dish" id="rank">$account[0]</td>
   		</tr>
   		<tr>
-  			<td class="dish" id="username"><color1>BrevinWankine</color1></td>
+  			<td class="dish" id="username"><color1>$username</color1></td>
   		<tr>
-  			<td class="dish" id="rank">102</td>
+  			<td class="dish" id="rank">$account[1]<br></td>
   		</tr>
 		<tr>  	
   		<td class="dish">
   			<form method="post" action="scripts/logout.php">
-  	   		<input type="submit" name="logout" value="Logout"/> </pre></p>
+  	   		<input type="submit" name="logout" value="Logout"/> </p>
   			</form>
   		</td>
   		</tr>
@@ -116,7 +125,6 @@ $username=$_COOKIE['username'];
 
 <div id="main">
   <?php
-    require "scripts/database.php";
     $page=$_GET['page']; 
     if($page=='home') {
       include('html/home.php');

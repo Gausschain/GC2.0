@@ -1,3 +1,54 @@
+<div class="builders">
+<h3>TOP BUILDERS</h3> 
+<div class="ranks">
+
+<?php
+
+// $spectrum=array('#FF7400','#CC7A00','#B26B00','#995C00','#804C00','#663D00');  attempted orange fadeout
+
+$query="SELECT * FROM accounts WHERE build_rank>0 ORDER BY build_rank ASC";
+$result=pg_query($dbconn,$query);
+$rows=pg_num_rows($result);
+
+$max=10;
+if ($rows<10)
+	$max=$rows;
+
+
+for ($j=0; $j<$max; $j++)
+{
+	$account=pg_fetch_row($result);
+	$string = "<span style='color: " . $spectrum["$j"] . ";'>" . $account[0] . "</span> <br>";
+	echo $string;
+}
+
+
+?>
+
+</div>
+</div>
+
+<div class="solvers">
+<h3>TOP SOLVERS</h3>
+<div class="ranks">
+
+<?php
+$query="SELECT * FROM accounts WHERE solve_rank>0 ORDER BY solve_rank ASC";
+$result=pg_query($dbconn,$query);
+
+for ($j=0; $j<$max; $j++)
+{
+	$account=pg_fetch_row($result);
+	$string = "<span style='color: " . $spectrum["$j"] . ";'>" . $account[0] . "</span> <br>";
+	echo $string;
+}
+
+
+?>
+	
+</div>
+</div>
+
 <section> 
           <!--List containing the "FAQ" -->
           <ul>

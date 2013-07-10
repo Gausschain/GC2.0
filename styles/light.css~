@@ -9,6 +9,28 @@ color2 {
 color3 {
 	#F0F0F0;
 }
+
+.builders {
+width: 18.5%;
+text-align: center;
+margin-top: 8px;
+float: left;
+}
+
+.solvers {
+width: 18.5%;
+text-align: center;
+margin-top: 8px;
+float: right;
+}
+
+.ranks {
+text-align: center;
+font-size: 24px;
+font-family: lucida console;
+
+}
+
 body {
   color: black;
   font-family: Arial;
@@ -17,14 +39,14 @@ body {
 body>header,section {
   margin-top: 1.5%;
   margin-bottom: 0%;
-  margin-left: 12.5%;
-  margin-right: 12.5%; 
+  margin-left: 18.5%;
+  margin-right: 18.5%; 
 }
 
 #banner {
 
 border-bottom: 4px solid #A00000;
-font-family: Monospace;
+font-family: lucida console;
 width: 34%;
 margin-left: auto;
 margin-right: auto;
@@ -39,12 +61,16 @@ letter-spacing: -11px;
 #hub,#login {
 font-family: Monospace;
 font-size: 15px;
-top: 10px;
+top: 5px;
 position: absolute;
-left: 85%;
-width: 250px;
-
+right: 20px;
 }
+
+#hub {
+width: 17%;
+}
+
+
 .forum {
   font-size: 107%;
   padding: 3%;
@@ -80,7 +106,7 @@ font-size: 25px;
 padding: 3px;
 position: absolute;
 top: 10px;
-left: 80px;
+left: 7%;
 font-family: Monospace;
 color: black;
 }
@@ -186,15 +212,18 @@ table {
 }
 
 #dish {
-	font-family: Helvetica;
-	font-size: 200%;
+	font-family: lucida console;
+	font-size: 250%;
 	cell-spacing:0;
 	border: 0 !important;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 td.dish{
 	border: 0;
 	padding:0;
+	background-color: white;
 }
 
 td#username {

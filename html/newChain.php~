@@ -23,7 +23,10 @@ if (isset($_POST['title']) && isset($_POST['submitChain']) && ! ( $_POST['title'
 	if (!pg_query($dbconn,$query))
 		echo "didn't work";	
 	else
-		echo "You have successfully created a chain.  Return to the BUILD section to continue.";
+	{
+		header("Location: index.php?page=build");
+		die();
+	}
 }
 
 
