@@ -1,5 +1,6 @@
 <?php
 $username=$_SESSION['username'];
+echo $username;
 
 $chainID=$_GET['chainID'];
 $number=$_GET['number'];

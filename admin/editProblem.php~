@@ -22,9 +22,7 @@ $problem=pg_fetch_row($result);
 
 if ( isset($_POST['save']) )
 {
-	echo $_POST['change_number'];	
 	$new_number=sanitize($_POST['change_number']);
-	echo $new_number;
 	$title=sanitize($_POST['title']);
 	$expos=sanitize($_POST['expos']);
 	$statement=sanitize($_POST['statement']);
@@ -33,10 +31,10 @@ if ( isset($_POST['save']) )
 	
 	$query="UPDATE problems SET number='$new_number', title='$title', expos='$expos', statement='$statement', solution='$answer' WHERE chainID='$chainID' AND number='$number'";
 	pg_query($dbconn,$query);
-/*
+
 	header("Location: editProblem.php?chainID=$chainID&number=$new_number");
 	die();
-*/
+
 
 }
 
@@ -104,12 +102,12 @@ $(document).ready(function() {
 <color2>Problem Title</color2>  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="text" name="title" maxlength="30" size="30" value="<?php echo $problem[2];?>"/><br><br>
 
 <color2>Exposition</color2><br>
-<textarea id="expos" name="expos" rows="33" maxlength="2000"><?php echo $problem[3];?></textarea> 
+<textarea id="expos" name="expos" rows="33" maxlength="2000"><?php echo htmlentities($problem[3]);?></textarea> 
 <div id="preview_expos" style="font-family: Monospace; font-size: 16px"></div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <color2>Problem Statement</color2><br>
-<textarea id="statement" name="statement" rows="17" maxlength="1000"><?php echo $problem[4];?></textarea> 
+<textarea id="statement" name="statement" rows="17" maxlength="1000"><?php echo htmlentities($problem[4])	;?></textarea> 
 <div id="preview_statement" style="font-family: Monospace; font-size: 16px"></div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

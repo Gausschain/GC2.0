@@ -1,3 +1,7 @@
+<?php
+session_start();
+$name=$_SESSION['username'];
+?>
 <!DOCTYPE html>
 <head>
   <?php if($_COOKIE['theme']=='dark') 
@@ -8,7 +12,7 @@
   else 
   {
 	$spectrum=array('#A00000', '#A02525', '#A04040', '#A05050', '#A05858', '#A06565', '#A07070', '#A07575', '#A08080', '#A08585');
-        echo "<link rel='stylesheet' type ='text/css' href='styles/dark.css' title='light'>";
+        echo "<link rel='stylesheet' type ='text/css' href='styles/light.css' title='light'>";
   } 
   ?> 
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
@@ -39,6 +43,11 @@
         collapsible: true,
         autoHeight: false
       });
+
+      $("#accordion h3 a").click(function() {
+	window.location = $(this).attr('href');
+	return false;
+      });	
     });
   </script>
   <script type="text/javascript"
@@ -116,9 +125,8 @@ $username=$_COOKIE['username'];
 
 <ul id="contents">
       <li class="top"> <span><a href="."> Home </a></span> </li>
-      <li class="top"> <a href='index.php?page=problems'>Solve</a></li>  
+      <li class="top"> <a href='index.php?page=solve'>Solve</a></li>  
       <li class="top"> <a href='index.php?page=build'>Build</a> </li>		
-
       <li class="top"> Ranks </li>
       <li class="top"> <a href='index.php?page=forum'>Forum</a> </li>
 </ul>
@@ -164,6 +172,18 @@ $username=$_COOKIE['username'];
     }
     else if ($page=='editProblem') {
 	include ('html/editProblem.php');
+    }
+    else if ($page=='solve') {
+	include ('html/solve.php');
+    }
+    else if ($page=='chain') {
+	include ('html/chain.php');
+    }
+    else if ($page=='congrats') {
+	include ('html/congrats.php');
+    }
+    else if ($page=='incorrect') {
+	include ('html/incorrect.php');
     }
     else {
       include('html/home.php'); 

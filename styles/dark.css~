@@ -180,6 +180,7 @@ label { /* to align labels of text forms */
 }
 
 h1 {
+  font-family: Arial;
   font-weight: normal;
   color: #FF7400;
   font-size: 36px;
@@ -194,7 +195,12 @@ h2.question {
   letter-spacing: -2px;
 }
 
+#accordion{
+text-align: center;
+}
+
 h3{
+  font-family: Arial;
   font-weight: normal;
   color: #FF7400;
   font-size: 36px;

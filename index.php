@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <head>
   <?php if($_COOKIE['theme']=='dark') 
@@ -39,6 +42,11 @@
         collapsible: true,
         autoHeight: false
       });
+
+      $("#accordion h3 a").click(function() {
+	window.location = $(this).attr('href');
+	return false;
+      });	
     });
   </script>
   <script type="text/javascript"
@@ -116,9 +124,8 @@ $username=$_COOKIE['username'];
 
 <ul id="contents">
       <li class="top"> <span><a href="."> Home </a></span> </li>
-      <li class="top"> <a href='index.php?page=problems'>Solve</a></li>  
+      <li class="top"> <a href='index.php?page=solve'>Solve</a></li>  
       <li class="top"> <a href='index.php?page=build'>Build</a> </li>		
-
       <li class="top"> Ranks </li>
       <li class="top"> <a href='index.php?page=forum'>Forum</a> </li>
 </ul>
@@ -164,6 +171,18 @@ $username=$_COOKIE['username'];
     }
     else if ($page=='editProblem') {
 	include ('html/editProblem.php');
+    }
+    else if ($page=='solve') {
+	include ('html/solve.php');
+    }
+    else if ($page=='chain') {
+	include ('html/chain.php');
+    }
+    else if ($page=='congrats') {
+	include ('html/congrats.php');
+    }
+    else if ($page=='incorrect') {
+	include ('html/incorrect.php');
     }
     else {
       include('html/home.php'); 

@@ -99,7 +99,8 @@ function rank_chains($dbconn)
 		if (!pg_query($dbconn,$query1)) echo "failed to set chain rank";
 	}
 }
-
-
+$url="../index.php?page=congrats&username=$username&chainID=$chainID&number=$number";
+header("Location: $url");
+die();
 
 ?>

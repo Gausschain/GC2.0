@@ -124,10 +124,10 @@ _END;
 <color2>Problem Title</color2>  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="title" maxlength="30" size="30" value="<?php echo $problem[2];?>"/> <br/><br>
 
 <color2>Exposition</color2><br>
-<textarea id="expos" name="expos" rows="33" maxlength="2000"><?php echo $problem[3];?></textarea> 
+<textarea id="expos" name="expos" rows="33" maxlength="2000"><?php echo htmlentities($problem[3]);?></textarea> 
 <div id="preview_expos" style="font-family: Monospace; font-size: 16px"></div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <color2>Problem Statement</color2><br>
 <textarea id="statement" name="statement" rows="17" maxlength="1000"><?php echo $problem[4];?></textarea> 
 <div id="preview_statement" style="font-family: Monospace; font-size: 16px"></div>

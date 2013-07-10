@@ -61,4 +61,8 @@ function rank_chains($dbconn)
 	}
 }
 
+$url="../index.php?page=chain&chainID=$chainID";
+header("Location: $url");
+die();
+
 ?>

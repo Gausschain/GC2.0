@@ -1,6 +1,6 @@
 <?php //run this when a star has been added to the problem identified by $_GET['chainID'] and $_GET['number']
 
-require_once 'scripts/database.php';
+require_once 'database.php';
 
 
 $chainID=$_GET['chainID'];
@@ -60,5 +60,9 @@ function rank_chains($dbconn)
 		if (!pg_query($dbconn,$query1)) echo "failed to set chain rank";
 	}
 }
+
+$url="../index.php?page=chain&chainID=$chainID";
+header("Location: $url");
+die();
 
 ?>
