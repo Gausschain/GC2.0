@@ -1,6 +1,5 @@
 <?php
 $username=$_SESSION['username'];
-echo $username;
 
 $chainID=$_GET['chainID'];
 $number=$_GET['number'];
@@ -43,7 +42,7 @@ if ($problem[3] != "")
 {
 	echo <<<_END
 	<div class="problem">
-	$problem[3];
+	$problem[3]
 	</div>
 _END;
 }

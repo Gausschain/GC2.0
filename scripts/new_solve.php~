@@ -62,9 +62,15 @@ if ($solves==1)
 	$old_popularity=0;
 else
 	$old_popularity = $stars * pow(1 + $stars / ($solves-1), 3); //this is the popularity of the problem that was just solved
+echo "stars: $stars<br>";
+echo "solves: $solves<br>";
+echo "old_popularity: $old_popularity<br>";
 $new_popularity = $stars * pow(1 + $stars / $solves , 3);
+echo "new_popularity: $new_popularity";
 $old_score=$chain[5];
+echo "old_score: $old_score";
 $score = $old_score - $old_popularity + $new_popularity;
+echo "score: $score";
 
 $query="UPDATE chains SET score='$score' WHERE chainID='$chainID'";
 pg_query($dbconn,$query);
@@ -99,8 +105,10 @@ function rank_chains($dbconn)
 		if (!pg_query($dbconn,$query1)) echo "failed to set chain rank";
 	}
 }
+/*
 $url="../index.php?page=congrats&username=$username&chainID=$chainID&number=$number";
 header("Location: $url");
 die();
+*/
 
 ?>

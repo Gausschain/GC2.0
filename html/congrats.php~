@@ -16,8 +16,8 @@ _END;
 <br><br>
 
 <?php
-echo <<<_END
 $next=$number+1;
+echo <<<_END
 <a href="index.php?page=problem&chainID=$chainID&number=$next"><h5>NEXT PROBLEM</h5></a>
 <a href="index.php?page=chain&chainID=$chainID"><h5>RETURN TO CHAIN</h5></a>
 _END;

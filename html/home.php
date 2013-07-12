@@ -1,5 +1,4 @@
 <div class="builders">
-<h3>TOP BUILDERS</h3> 
 <div class="ranks">
 
 <?php
@@ -29,7 +28,7 @@ for ($j=0; $j<$max; $j++)
 </div>
 
 <div class="solvers">
-<h3>TOP SOLVERS</h3>
+	
 <div class="ranks">
 
 <?php

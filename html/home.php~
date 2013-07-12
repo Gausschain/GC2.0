@@ -1,11 +1,10 @@
 <div class="builders">
-<h3>TOP BUILDERS</h3> 
 <div class="ranks">
 
 <?php
 
-$spectrum=array('#FFFFFF','#D8D8D8','#C0C0C0','#B0B0B0','#A0A0A0','#909090','#808080','#707070','#606060','#505050');
 // $spectrum=array('#FF7400','#CC7A00','#B26B00','#995C00','#804C00','#663D00');  attempted orange fadeout
+
 $query="SELECT * FROM accounts WHERE build_rank>0 ORDER BY build_rank ASC";
 $result=pg_query($dbconn,$query);
 $rows=pg_num_rows($result);
@@ -29,7 +28,7 @@ for ($j=0; $j<$max; $j++)
 </div>
 
 <div class="solvers">
-<h3>TOP SOLVERS</h3>
+
 <div class="ranks">
 
 <?php

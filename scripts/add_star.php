@@ -2,9 +2,13 @@
 
 require_once 'database.php';
 
-
+$username=$_GET['username'];  //this is the account that awarded the star
 $chainID=$_GET['chainID'];
 $number=$_GET['number'];
+
+$query="SELECT * FROM accounts WHERE username='$username'";
+$result=pg_query($dbconn,$query);
+$giver=pg_fetch_row($result);
 
 $query="SELECT * FROM problems WHERE chainID='$chainID' AND number='$number'";
 $result=pg_query($dbconn,$query);
@@ -19,6 +23,18 @@ $author=$chain[4];
 $query="SELECT * FROM accounts WHERE username='$author'";
 $result=pg_query($dbconn,$query);
 $account=pg_fetch_row($result);
+
+//mark that the user has awarded a star
+$query="SELECT chain" . $chainID . " FROM accounts WHERE username='" . $username . "'";
+$result=pg_query($dbconn,$query);
+$row=pg_fetch_row($result);
+$string=$row[0];
+
+$new=substr($string,0,$number-1) . "2" . substr($string,$number);
+
+$query="UPDATE accounts SET chain" . $chainID . " =" . "'" . $new . "'" . " WHERE username='" . $username . "'";
+pg_query($dbconn,$query);
+
 
 //update number of stars in problem
 $old_stars=$problem[6];

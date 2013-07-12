@@ -42,7 +42,7 @@ if ($problem[3] != "")
 {
 	echo <<<_END
 	<div class="problem">
-	$problem[3];
+	$problem[3]
 	</div>
 _END;
 }
@@ -64,7 +64,7 @@ $binary=substr($string,$number-1,1);
 
 
 if (!$username or $username=="");
-else if ($username==$author or $binary=='1')
+else if ($username==$author or $binary>0)
 	echo "Solution: $solution";
 
 

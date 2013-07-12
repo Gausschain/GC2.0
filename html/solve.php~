@@ -1,6 +1,6 @@
 <?php
 
-$query="SELECT * FROM chains WHERE islive='1' ORDER BY score DESC";
+$query="SELECT * FROM chains WHERE true ORDER BY score DESC";
 $result=pg_query($dbconn,$query);
 $rows=pg_num_rows($result);
 
@@ -15,6 +15,7 @@ for ($j=0; $j<$rows; $j++)
 	$chainID=$chain[0];
 	$title=$chain[1];
 	$score=$chain[5];
+	$author=$chain[4];
 	$description=$chain[2];
 	$prereqs=$chain[3];
 
@@ -22,12 +23,15 @@ for ($j=0; $j<$rows; $j++)
 
 	<h3>
 		<span class="title"><a href="index.php?page=chain&chainID=$chainID"><color1>$title</color1></a></span>
-		<span class="score">Score: $score</span>
+		<span class="score">$score</span>
+		<span class="author">$author</span>
+		
+		
 	</h3>
 	
-	<div>
-		Description: $description <br>
-		Prerequisites: $prereqs
+	<div class="chaininfo">
+		<color1><strong>Description:</strong></color1> $description <br>
+		<color1><strong>Prerequisites:</strong></color1> $prereqs
 	</div>
 _END;
 

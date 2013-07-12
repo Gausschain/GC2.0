@@ -14,6 +14,16 @@ color4 {
 	color: black;
 }
 
+div.chain{
+padding: 0px;
+font-family: Arial;
+margin-top:-20px;
+margin-bottom:-20px;
+margin-left:14.5%;
+margin-right: 18.5%;
+}
+
+
 .problem {
 font-size:20px;
 font-family:Arial;
@@ -31,28 +41,44 @@ margin-left: 18.5%;
 margin-right: 18.5%;
 
 }
-
+.chaininfo {
+font-family: Arial;
+}
 #accordion span.title {
-color: #A00000; 
+font-family: courier;
+font-weight: bold;
+color: #A00000;
+font-size:24px;
+letter-spacing: -1px;
+display: inline-block;
 }
 
 #accordion span.score {
-color: blue;
-text-align: right;
-margin-right: 5px;
+color: #707070;
+font-family: Impact;
+font-size: 24px;
+display: inline-block;
+float: right;	
 }
 
+#accordion span.author {
+font-family: Arial;
+letter-spacing: 0px;
+color: black;
+font-size: 18px;
+display: block;
+}
 .builders {
 width: 18.5%;
 text-align: center;
-margin-top: 8px;
+margin-top: 4%;
 float: left;
 }
 
 .solvers {
 width: 18.5%;
 text-align: center;
-margin-top: 8px;
+margin-top: 4%;
 float: right;
 }
 
@@ -218,6 +244,9 @@ h1 {
 	font-size: 36px;
 	letter-spacing: -2px;
 }
+h3.chain{
+display: block;
+}
 
 h2.question {
   font-family: Monospace;
@@ -248,11 +277,10 @@ h5 {
   font-family: Arial;
   font-weight: normal;
   font-size: 20px;
+}
 table {
   font-family: monospace;
   font-size: 125%;
-  border: 4px solid #A00000; !important;
-  border-radius: 10px;
   border-collapse: collapse;
 }
 
@@ -280,24 +308,51 @@ td#username {
 	
 }
 
+
+#star {
+  border: 0;
+  background-color: white;
+  text-align: right;
+  width: 20px;
+}
 td#rank {
 	font-family: Impact;
 	font-size: 45px;
 }
 
 .oddrow {
-  background-color: white ;
+  background-color: white;
 }
 .evenrow {
-  background-color: #F0F0F0;
+  background-color: #F0F0F0 ;
 }
 th, td {
-  border: 2px solid #A00000;
+  border: 1px solid #A00000;
   text-align: center; 
   padding: 10px;
 }
+
+td.title {
+text-align: left;
+height: 30px;
+}
+
+td.number {
+height: 30px;
+width: 80px;
+}
+td.id {
+width: 40px;
+}
+td {
+  font-family: Arial;
+}
 th {
-  background-color: white;
+  font-family: courier;
+  background-color: #959595;
+  color: #A00000;
+  font-size: 20px;
+
 }
 a {
   text-decoration: none;

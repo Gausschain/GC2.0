@@ -9,7 +9,7 @@ $number=$_GET['number'];
 You have correctly solved problem number <?php echo $number?>.  If you enjoyed the problem, 
 
 <?php echo <<<_END
-<a href="scripts/add_star.php?chainID=$chainID&number=$number"><color1>give it a star!</color1></a> 
+<a href="scripts/add_star.php?username=$username&chainID=$chainID&number=$number"><color1>give it a star!</color1></a> 
 _END;
 ?>
 

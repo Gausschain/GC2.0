@@ -74,7 +74,7 @@ echo <<<_END
   
     <form method="post" action="scripts/login.php">
 	<p><pre>    Name <input type="text" name="username" /> </pre></p>
-	<p>Password <input type="text" name="password" /> </p>
+	<p>Password <input type="password" name="password" /> </p>
 	<p><pre>         <input type="submit" name="sub" value="Login"/> </pre></p>
 
 	</form>

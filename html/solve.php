@@ -15,6 +15,7 @@ for ($j=0; $j<$rows; $j++)
 	$chainID=$chain[0];
 	$title=$chain[1];
 	$score=$chain[5];
+	$author=$chain[4];
 	$description=$chain[2];
 	$prereqs=$chain[3];
 
@@ -22,12 +23,15 @@ for ($j=0; $j<$rows; $j++)
 
 	<h3>
 		<span class="title"><a href="index.php?page=chain&chainID=$chainID"><color1>$title</color1></a></span>
-		<span class="score">Score: $score</span>
+		<span class="score">$score</span>
+		<span class="author">$author</span>
+		
+		
 	</h3>
 	
-	<div>
-		Description: $description <br>
-		Prerequisites: $prereqs
+	<div class="chaininfo">
+		<color2><strong>Description:</strong></color2> $description <br>
+		<color2><strong>Prerequisites:</strong></color2> $prereqs
 	</div>
 _END;
 

@@ -31,7 +31,7 @@ if (isset($_POST['login']))
 echo <<<_END
 <form method="post" action="login.php">
 <input type="text" name='username'/> <br>	
-<input type="text" name='password'/>
+<input type="password" name='password'/>
 <input type="submit" name='login' value='Login'/>
 </form>
 _END;
